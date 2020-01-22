@@ -2,6 +2,11 @@
 paragrafo e suddividerlo in tanti paragrafi: ogni volta che si incontra un punto,
 bisogna creare un nuovo paragrafo.
 Nome repo: php-snacks-blocco-1 -->
+
+<?php
+include 'text_data.php'
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -22,7 +27,23 @@ Nome repo: php-snacks-blocco-1 -->
                 <h1>PHPSnack 5</h1>
         </header>
         <main>
-
+            <h3>Testo originale:</h3>
+            <p>
+            <?php
+            echo $text;
+            ?>
+            </p>
+            <br>
+            <h3>Testo in paragrafi:</h3>
+            <?php
+                // trasformo la mega sringa in un array dove ogni elemento sarà un paragrafo
+                $text_array= explode(".", $text);
+                // ciclo l'array e stampo ogni elemento come un paragrafo
+                foreach ($text_array as $paragraph) { ?>
+                    <p> <?php echo $paragraph . '.';  ?> </p>
+                <?php
+                }
+                ?>
         </main>
     </div>
 
