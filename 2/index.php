@@ -32,9 +32,10 @@ Nome repo: php-snacks-blocco-1 -->
                 ?>
 
                 <h2>Parametri letti:</h2>
-                <h3><?php echo $name; ?></h3>
-                <h3><?php echo $mail; ?></h3>
-                <h3><?php echo $age; ?></h3>
+                <h3>Nome: <?php echo $name; ?></h3>
+                <h3>e-mail: <?php echo $mail; ?></h3>
+                <h3>Età: <?php echo $age; ?></h3>
+                <br>
 
                 <?php
                 // controllo: lunghezza nome sia minimo 3 caratteri, età sia un numero,
