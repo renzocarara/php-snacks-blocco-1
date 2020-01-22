@@ -4,7 +4,7 @@ Stampare Nome, Cognome e la media dei voti di ogni alunno.
 Nome repo: php-snacks-blocco-1 -->
 <!DOCTYPE html>
 <html lang="it">
-
+<?php include 'class_data.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,23 @@ Nome repo: php-snacks-blocco-1 -->
                 <h1>PHPSnack 7</h1>
         </header>
         <main>
+
+<?php foreach ($class as $student) {  ?>
+
+    <h3>Studente:</h3>
+
+    <p>Nome: <?php echo $student['name'] ?></p>
+    <p>Cognome: <?php echo $student['lastname'] ?></p>
+        <?php
+            $total=0;
+            foreach ($student['grades'] as $matter => $grade) {
+                $total += $grade;
+            }
+            $average = $total / count($student['grades']) ?>
+
+            <p>Media voti: <?php echo $average ?></p>
+
+<?php } ?>
 
         </main>
     </div>
