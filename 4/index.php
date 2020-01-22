@@ -44,10 +44,9 @@ function create_array()
             <h3>Array di 15 numeri casuali:</h3>
             <?php
             $rand_array = create_array();
-            echo '<pre>';
-            print_r($rand_array);
-            echo '</pre>';
-            ?>
+            foreach ($rand_array as $index => $value) { ?>
+                <p>Elemento n.<?php echo($index + 1) . ' = ' . $value ?></p>
+            <?php } ?>
 
         </main>
     </div>
