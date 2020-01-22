@@ -24,36 +24,25 @@ Nome repo: php-snacks-blocco-1 -->
                 <h1>PHPSnack 2</h1>
         </header>
         <main>
-                <?php
-                // estraggo i parametri dall'array $_GET
-                $name=$_GET['name'];
-                $mail=$_GET['mail'];
-                $age=$_GET['age'];
-                ?>
 
-                <h2>Parametri letti:</h2>
-                <h3>Nome: <?php echo $name; ?></h3>
-                <h3>e-mail: <?php echo $mail; ?></h3>
-                <h3>Età: <?php echo $age; ?></h3>
-                <br>
+        <form class="" action="check_user.php" method="get">
+            <div class="input-box">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" value="Renzo" maxlength="80" required>
+            </div>
+            <div class="input-box">
+                <label for="mail">E-mail:</label>
+                <input type="email" name="mail" value="renzo@me.com" maxlength="50" required>
+            </div>
+            <div class="input-box">
+                <label for="age">Età:</label>
+                <input type="text" name="age" value="52" maxlength="3" required>
+            </div>
+            <div>
+                <input type="submit" name="send" value="Invia">
+            </div>
+        </form>
 
-                <?php
-                // controllo: lunghezza nome sia minimo 3 caratteri, età sia un numero,
-                // la mail contenga un punto e la chiocciola
-                if (
-                     (mb_strlen($name) >= 3) &&
-                     (is_numeric($age)) &&
-                     ((strpos($mail, '.') != false) &&((strpos($mail, '@') != false)))
-                   ) {
-                    ?>
-                    <h2><?php echo 'Accesso riuscito'; ?></h2>
-                <?php
-                } else {
-                    ?>
-                    <h2><?php echo 'Accesso negato'; ?></h2>
-                <?php
-                }
-                ?>
         </main>
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
