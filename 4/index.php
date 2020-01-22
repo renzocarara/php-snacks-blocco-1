@@ -1,6 +1,25 @@
 <!-- Creare una funzione che restituisce un array con 15 numeri casuali, tenendo
 conto che l’array non dovrà contenere lo stesso numero più di una volta
 Nome repo: php-snacks-blocco-1 -->
+
+
+<?php
+function create_array()
+{
+    $random_numbers=[]; // creo array vuoto
+    while (count($random_numbers)<15) {
+        // genero unnumero casuale
+        $random_number=rand(1, 100);
+        // verifico se il numero non è già presente nell'array
+        if (!in_array($random_number, $random_numbers)) {
+            // inserisco il numero nell'array
+            array_push($random_numbers, $random_number);
+        }
+    }
+    return $random_numbers;
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -21,6 +40,14 @@ Nome repo: php-snacks-blocco-1 -->
                 <h1>PHPSnack 4</h1>
         </header>
         <main>
+
+            <h3>Array di 15 numeri casuali:</h3>
+            <?php
+            $rand_array = create_array();
+            echo '<pre>';
+            print_r($rand_array);
+            echo '</pre>';
+            ?>
 
         </main>
     </div>
