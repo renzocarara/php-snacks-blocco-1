@@ -2,6 +2,11 @@
 Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i
 PM in un rettangolo verde.
 Nome repo: php-snacks-blocco-1 -->
+
+<?php
+include 'staff_data.php'
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -22,6 +27,36 @@ Nome repo: php-snacks-blocco-1 -->
                 <h1>PHPSnack 6</h1>
         </header>
         <main>
+<?php foreach ($db as $role => $list) {
+    if ($role == 'teachers') { ?>
+            <!-- visualizzo i teachers -->
+            <h3>Teachers:</h3>
+            <div class="teachers">
+                 <!-- scorro la la lista dei teacher -->
+                <?php foreach ($list as $teacher) { ?>
+                    <!-- per ogni teacher visualizzo nome e cognome     -->
+                    <p>Nome:<?php  echo  $teacher['name']; ?></p>
+                    <p>Cognome:<?php  echo  $teacher['lastname']; ?></p>
+                <?php }  ?>
+            </div>
+<?php
+    } else { ?>
+            <!-- visualizzo i PM -->
+            <h3>PM:</h3>
+            <div class="pm">
+                 <!-- scorro la la lista dei PM -->
+                <?php foreach ($list as $pm) { ?>
+                    <!-- per ogni PM visualizzo nome e cognome     -->
+                    <p>Nome:<?php  echo  $pm['name']; ?></p>
+                    <p>Cognome:<?php  echo  $pm['lastname']; ?></p>
+                <?php }  ?>
+            </div>
+
+     <?php } ?>
+
+        <?php
+}  ?>
+
 
         </main>
     </div>
