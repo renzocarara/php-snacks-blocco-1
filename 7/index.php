@@ -34,7 +34,7 @@ Nome repo: php-snacks-blocco-1 -->
             foreach ($student['grades'] as $matter => $grade) {
                 $total += $grade;
             }
-            $average = $total / count($student['grades']) ?>
+            $average = round($total / count($student['grades']), 2); ?>
 
             <p>Media voti: <?php echo $average ?></p>
 

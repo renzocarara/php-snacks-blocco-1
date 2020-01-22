@@ -25,7 +25,7 @@ $class = [
             'grades' => [
                 'math' => 4,
                 'history' => 2,
-                'geography' => 16
+                'geography' => 6
             ]
         ]
 ];
