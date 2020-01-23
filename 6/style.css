@@ -25,13 +25,13 @@ header, main {
 }
 
 .teachers {
+    background-color: lightgray;
     border: 1px solid #000;
-    background-color: lightgreen;
     padding: 10px;
 }
 
 .pm {
+    background-color: lightgreen;
     border: 1px solid #000;
-    background-color: lightgray;
     padding: 10px;
 }
