@@ -10,7 +10,7 @@ function check_name($name)
 {
     // controllo che il nome sia composto da almeno 3 caratteri, elimino gli eventuali spazi iniziali  o finali
     $is_passed = false;
-    if (mb_strlen(trim($name)) >= 3) {
+    if (mb_strlen(trim($name)) > 3) {
         $is_passed = true;
     } else {
         // warn the user
