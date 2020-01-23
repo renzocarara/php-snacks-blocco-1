@@ -35,7 +35,7 @@ function check_email($mail)
     // controllo che nell'indirizzo ci sia almeno un carattere '.' e un carattere '@'
     $is_passed = false;
     // NOTA: il controllo sul carattere '@' sarebbe superfluo, poichè l'HTML col tag <input> già ne verifica la presenza obbligatoria
-    if ((strpos($mail, '.') != false) &&((strpos($mail, '@') != false))) {
+    if ((strpos($mail, '.') !== false) &&((strpos($mail, '@') != false))) {
         $is_passed = true;
     } else {
         // warn the user
