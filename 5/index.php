@@ -35,15 +35,8 @@ include 'text_data.php'
             </p>
             <br>
             <h3>Testo in paragrafi:</h3>
-            <?php
-                // trasformo la mega sringa in un array dove ogni elemento sarà un paragrafo
-                $text_array= explode(".", $text);
-                // ciclo l'array e stampo ogni elemento come un paragrafo
-                foreach ($text_array as $paragraph) { ?>
-                    <p> <?php echo $paragraph . '.';  ?> </p>
-                <?php
-                }
-                ?>
+                <?php $text_paragraph=str_replace('.', '.</p><p>', $text);?>
+                <p><?php echo $text_paragraph; ?></p>
         </main>
     </div>
 
